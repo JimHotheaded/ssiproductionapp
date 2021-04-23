@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>FMCT07</title>
+</head>
+
+<body>
+  <div class="container-fluid border">
+  <h1>บันทึกเครื่อง COATER5 (FM-CT-07)</h1>
+  <div class="container-fluid">
+    <p>Date/Time: <span id="datetime"></span></p>
+    <script>
+      var dt = new Date();
+      document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+    </script>
+  </div>
+  <form class="form-group" action="/fmct7" method="post">
+    <div class="container-fluid border border-primary">
+      <h3>อุณหภูมิ Hot Oil (130-170*C)</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p><input type="number" name="fm07ct5hotOilTemp" step=0.01></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>อุณหภูมิท่อ Mixer (70-130*C)</h3>
+      <h5>เช็คทุกชั่วโมง</h5>
+      <p><input type="number" name="fm07ct5mixerPipeTemp" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>อุณหภูมิ Screw Premix(80-130*C)</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p><input type="number" name="fm07ct5screwPremixTemp" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>Stearic Flow</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p>
+        <input type="radio" name="fm07ct5stearicFlow" id="normal" value="true">
+        <label for="normal">ปกติ</label>
+        <input type="radio" name="fm07ct5stearicFlow" id="abnormal" value="false">
+        <label for="abnormal">ไม่ปกติ</label>
+      </p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>Stearic Pump(%)</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p><input type="number" name="fm07ct5stearicPump" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>Powder Flow</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p>
+        <input type="radio" name="fm07ct5powderFlow" id="normal" value="true">
+        <label for="normal">ปกติ</label>
+        <input type="radio" name="fm07ct5powderFlow" id="abnormal" value="false">
+        <label for="abnormal">ไม่ปกติ</label>
+      </p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>Powder Feed(Hz)</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p><input type="number" name="fm11ct5powderFeed" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>เช็คฝุ่นจากเครื่องจักรหลัก</h3>
+      <!-- <h4>เช็คทุก 8 ชั่วโมง/8.00/16.00/24.00</h4> -->
+      <p>
+        <input type="radio" name="fm07ct1t5dustMachineCheck" id="normal" value="true">
+        <label for="normal">ปกติ</label>
+        <input type="radio" name="fm07ct1t5dustMachineCheck" id="abnormal" value="false">
+        <label for="abnormal">ไม่ปกติ</label>
+      </p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>เช็คฝุ่นจากระบบลำเลียง</h3>
+      <!-- <h4>เช็คทุก 8 ชั่วโมง/8.00/16.00/16.00/24.00</h4> -->
+      <p>
+        <input type="radio" name="fm11ct1t5dustConveyorCheck" id="normal" value="true">
+        <label for="normal">ปกติ</label>
+        <input type="radio" name="fm11ct1t5dustConveyorCheck" id="abnormal" value="false">
+        <label for="abnormal">ไม่ปกติ</label>
+      </p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>เช็คฝุ่นจากระบบ Bag Filter</h3>
+      <p>
+        <input type="radio" name="fm11ct1t5dustBagfilterCheck" id="normal" value="true">
+        <label for="normal">ปกติ</label>
+        <input type="radio" name="fm11ct1t5dustBagfilterCheck" id="abnormal" value="false">
+        <label for="abnormal">ไม่ปกติ</label>
+      </p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>ตรวจเช็คทำความสะอาดแม่เหล็ก(กรัม)</h3>
+      <p><input type="number" name="fm07ct5magnetClean" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>เขย่าน้ำแป้ง HiCOAT</h3>
+      <!-- <h4>เช็คทุก 8 ชั่วโมง./</h4> -->
+      <p> <input type="radio" name="fm07ct5productCheck" id="pass" value="true">
+        <label for="pass">ผ่าน</label>
+        <input type="radio" name="fm07ct5productCheck" id="notPass" value="false">
+        <label for="notPass">ไม่ผ่าน</label>
+      </p>
+    </div><br>
+    <div class="d-flex justify-content-center">
+    <h1>==========</h1>
+    </div>
+    <div class="container-fluid d-flex justify-content-center">
+      <input type="submit" value="submit">
+    </div>
+  </form>
+  <hr size="30">
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

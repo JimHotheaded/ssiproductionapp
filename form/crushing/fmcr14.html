@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FM-CR-14</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <h3>FM-CR-14</h3>
+    <p>Date/Time: <span id="datetime"></span></p>
+    <script>
+      var dt = new Date();
+      document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+    </script>
+    <hr size="2">
+    <form class="" action="index.html" method="post">
+      <table>
+        <thead>
+          <h4>แผนการตรวจเช็คเครื่อง Hammer Mill แผนก Crushing</h4>
+        </thead>
+        <tbody>
+          <tr>
+            <th><em>รายการ</em></th>
+            <th><em>อาการ</em></th>
+            <th><em>status</em></th>
+          </tr>
+          <tr>
+            <td>1.Hopper รับหิน</td>
+            <td>รอยแตกร้าว</td>
+            <td><input type="checkbox" name="" value=""></td>
+          </tr>
+          <tr>
+            <td>2.แท่นวางถุงจัมโบ้</td>
+            <td>รอยชำรุด แตกร้าว</td>
+            <td><input type="checkbox" name="" value=""></td>
+          </tr>
+          <tr>
+            <td>3.สายพานลำเลียง</td>
+            <td>รอยขาด,ความตึงหรือหย่อน</td>
+            <td><input type="checkbox" name="" value=""></td>
+          </tr>
+          <tr>
+            <td>4.Hammer mill</td>
+            <td>รอยชำรุดแตกร้าว</td>
+            <td><input type="checkbox" name="" value=""></td>
+          </tr>
+          <tr>
+            <td>5.มอเตอร์และแท่น</td>
+            <td>รอยแตกร้าว,หลวมคลอน</td>
+            <td><input type="checkbox" name="" value=""></td>
+          </tr>
+          <tr>
+            <td>6.สายพานขับมอเตอร์</td>
+            <td>ความหย่อน ตึง รอยชำรุด</td>
+            <td><input type="checkbox" name="" value=""></td>
+          </tr>
+          <tr>
+            <td>7.พู่เลย์</td>
+            <td>หลวม คลอน รอยแตกร้าว</td>
+            <td><input type="checkbox" name="" value=""></td>
+          </tr>
+          <tr>
+            <td>8.การเดินเครื่อง</td>
+            <td>การสั่นสะเทือน,เสียงดัง</td>
+            <td><input type="checkbox" name="" value=""></td>
+          </tr>
+          <tr>
+            <td>9.ผลผลิต</td>
+            <td>ขนาดเม็ด,ฝุ่น</td>
+            <td><input type="checkbox" name="" value=""></td>
+          </tr>
+          <tr>
+            <td>10.สวิทช์ควบคุม</td>
+            <td>รอยชำรุด,ความสะอาด</td>
+            <td><input type="checkbox" name="" value=""></td>
+          </tr>
+          <tr>
+            <td>11.ลูกปืน จุดหมุน</td>
+            <td>การหล่อลื่น</td>
+            <td><input type="checkbox" name="" value=""></td>
+          </tr>
+          <tr>
+            <td><input type="submit" name="" id=""></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+</html>

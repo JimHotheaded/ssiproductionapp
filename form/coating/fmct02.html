@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>FM-CT-02</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <h3>FM-CT-02</h3>
+    <p>Date/Time: <span id="datetime"></span></p>
+    <script>
+      var dt = new Date();
+      document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+    </script>
+    <hr size="2">
+    <form class="form-group" action="/fmct02" method="post" autocomplete="off">
+      <table class="table">
+        <th style="text-align:left">Coating Plant 2# Data Sheet</th>
+        <tbody>
+          <tr>
+            <td>Watthour Meter</td>
+            <!-- <td>เช็คทุก 8 ชม./8.00/16.00/24.00</td> -->
+            <td><input type="number" name="fm02ct6wattHourMeter" step=0.01 min=0>Hr</td>
+          </tr>
+          <!-- <tr>
+            <td>1.Stearic Acid Flow Rate(l/hr)(Max.60)</td>
+            <td><input type="number" name="fm02ct6stearicAcidFlowRate" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>2.Stearic Acid Feed Pump(0.7%-1.2%)</td>
+            <td><input type="number" name="fm02ct6stearicAcidFeedPump" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>3.Stearic Acid Tank Temp(70-120*C)</td>
+            <td><input type="number" name="fm02ct6stearicAcidTankTemp" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>4.Stearic Acid Pipe Temp No.1(90-120*C)</td>
+            <td><input type="number" name="fm02ct6stearicAcidPipeTempNo1" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>5.Stearic Acid Pipe Temp No.3(90-120*C)</td>
+            <td><input type="number" name="fm02ct6stearicAcidPipeTempNo3" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>6.Stearic Acid Pipe Temp No.6(90-120*C)</td>
+            <td><input type="number" name="fm02ct6stearicAcidPipeTempNo6" step=0.01 min=0 max=9999></td>
+          </tr> -->
+          <tr>
+            <td>7.Coater Current M1(Amp)</td>
+            <!-- <td>เช็คทุกชม.</td> -->
+            <td><input type="number" name="fm02ct6coaterCurrentM1" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>8.Coater Current M2(Amp)</td>
+            <!-- <td>เช็คทุกชม.</td> -->
+            <td><input type="number" name="fm02ct6coaterCurrentM2" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>9.Hot Oil Tank Temp(100-130*C)</td>
+            <!-- <td>เช็คทุกชม.</td> -->
+            <td><input type="number" name="fm02ct6hotOilTankTemp" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>10.Air Flow Heater Temp(80-130*C)</td>
+            <!-- <td>เช็คทุกชม.</td> -->
+            <td><input type="number" name="fm02ct6airFlowHeaterTemp" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>11.Root Blower Current(Amp)(Max.100)</td>
+            <!-- <td>เช็คทุกชม.</td> -->
+            <td><input type="number" name="fm02ct6rootBlowerCurrent" step=0.01 min=0></td>
+          </tr>
+          <!-- <tr>
+            <td>12.Raw Material Feed Flow Rate(kgs/hr) +-500</td>
+            <td><input type="number" name="fm02ct6rawMaterialFeedFlowRate" step=0.01 min=0 max=9999></td>
+          </tr> -->
+          <tr>
+            <td>13.Mixer Pipe Temp(70-130*C)</td>
+            <!-- <td>เช็คทุกชม.</td> -->
+            <td><input type="number" name="fm02ct6mixerPipeTemp" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>14.แรงดันระบบลม (4-7 bar)</td>
+            <!-- <td>เช็คทุกชม.</td> -->
+            <td><input type="number" name="fm02ct6pressure" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>15.ตรวจเช็คทำความสะอาดแม่เหล็ก (กรัม)</td>
+            <!-- <td>เช็คทุก 4 ชม./8.00/12.00/16.00/20.00/24.00/4.00</td> -->
+            <td><input type="number" name="fm02ct6magnetCleanCheck" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>16.เช็คฝุ่นจากเครื่องจักร</td>
+            <!-- <td>เช็คทุก 8 ชม./8.00/16.00/24.00</td> -->
+            <td><input type="checkbox" name="fm02ct6dustMachineCheck" id="" min=0></td>
+          </tr>
+          <tr>
+            <td>17.เช็คฝุ่นจากระบบลำเลียง</td>
+            <!-- <td>เช็คทุก 8 ชม./8.00/16.00/24.00</td> -->
+            <td><input type="checkbox" name="fm02ct6dustConveyorCheck" id="" min=0></td>
+          </tr>
+          <tr>
+            <td>18.เช็คฝุ่นจากระบบ Bag Filter</td>
+            <!-- <td>เช็คทุก 8 ชม.8.00/16.00/24.00</td> -->
+            <td><input type="checkbox" name="fmct02ct6dustBagfilterCHeck" id="" min=0></td>
+          </tr>
+          <tr>
+            <td>19.Level Check Silo.17</td>
+            <!-- <td>เช็คทุก 8 ชม./15.00/23.00/7.00</td> -->
+            <td><input type="number" name="fm02ct6levelSilo17" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>20.Level Check Silo.21</td>
+            <!-- <td>เช็คทุก 8 ชม./15.00/23.00/7.00</td> -->
+            <td><input type="number" name="fm02ct6levelSilo21" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>21.Level Check Silo.22</td>
+            <!-- <td>เช็คทุก 8 ชม./15.00/23.00/7.00</td> -->
+            <td><input type="number" name="fm02ct6levelSilo22" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>22.Level Check Silo.23</td>
+            <!-- <td>เช็คทุก 8 ชม./15.00/23.00/7.00</td> -->
+            <td><input type="number" name="fm02ct6levelSilo23" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>23.เขย่าน้ำแป้ง HiCoat.</td>
+            <td>
+              <input type="checkbox" name="fm02ct6shakeHiCoatPass">
+              <label for="fm02ct6shakeHoCoatPass">ผ่าน</label>
+              <input type="checkbox" name="fm02ct6shakeHiCoatNotPass">
+              <label for="fm02ct6shakeHoCoatNotPass">ไม่ผ่าน</label>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="submit" name="" id=""></td>
+          </tr>
+
+      </table>
+    </form>
+    </tbody>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

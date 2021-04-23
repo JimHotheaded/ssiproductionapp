@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FM-CSH-02</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <h3>FM-CSH-02</h3>
+      <p>Date/Time: <span id="datetime"></span></p>
+      <script>
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+      </script>
+      <hr size="2">
+      <form class="" action="info.php" method="post" autocomplete="off">
+        <table>
+          <thead>
+            <h4>Crushing Daily Preventive Maintenance Check List</h4>
+          </thead>
+          <tbody>
+            <tr>
+              <th><em>Machine</em></th>
+              <th><em>เกณฑ์การตรวจสอบ</em></th>
+              <th><em>status</em></th>
+            </tr>
+            <tr>
+              <td>1.Belt Conveyor (เข้าJaw) สำรอง</td>
+              <td>Bearing,เฟือง,โซ่,Alignment</td>
+              <td>
+                <input type="radio" id="normal" name="status1fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status1fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status1fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status1fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>2.Hopper</td>
+              <td>ปูนไม่แตกหัก,หลุดร่อน</td>
+              <td>
+                <input type="radio" id="normal" name="status2fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status2fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status2fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status2fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>3.Grizzly Feeder(B1.0)</td>
+              <td>น้ำมันระดับหลอดแก้ว/V-Belt</td>
+              <td>
+                <input type="radio" id="normal" name="status3fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status3fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status3fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status3fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>4.Belt Conveyor (ใต้ Grizzly) 4.1</td>
+              <td>Bearing,เฟือง,โซ่,Alignment</td>
+              <td>
+                <input type="radio" id="normal" name="status4fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status4fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status4fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status4fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>5.Jaw Crusher(B 2.0)</td>
+              <td>V-Belt,Boltยึด,แผ่นชิม,สปริงกด</td>
+              <td>
+                <input type="radio" id="normal" name="status5fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status5fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status5fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status5fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>6.Motor Jaw Crusher Current</td>
+              <td>น้อยกว่า 160A</td>
+              <td>
+                <label for="status6fmcsh02">กระแสที่วัดได้(A):</label>
+                <input type="number" name="status6fmcsh02" id="status6fmcsh02" min=0 max=999 />
+              </td>
+            </tr>
+            <tr>
+              <td>7.Belt Conveyor1(ใต้ Jaw)3.1</td>
+              <td>Bearing,เฟือง,โซ่,Alignment</td>
+              <td>
+                <input type="radio" id="normal" name="status7fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status7fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status7fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status7fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>8.Belt Conveyor2(ใต้ Jaw)3.2</td>
+              <td>Bearing,เฟือง,โซ่,Alignment</td>
+              <td>
+                <input type="radio" id="normal" name="status8fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status8fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status8fmshs02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status8fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>9.Belt Conveyor(เข้า Impact)5.1</td>
+              <td>Bearing,เฟือง,โซ่,Alignment</td>
+              <td>
+                <input type="radio" id="normal" name="status9fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status9fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status9fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status9fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>10.Magnetic Separator(แม่เหล็กไฟฟ้า)</td>
+              <td>สวิทช์ควบคุม,เหล็กทดสอบ</td>
+              <td>
+                <input type="radio" id="normal" name="status10fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status10fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status10fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status10fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>11.Impact Breaker 7.1</td>
+              <td>V-Belt,Boltยึด,การรั่ว</td>
+              <td>
+                <input type="radio" id="normal" name="status11fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status11fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status11fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status11fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>12.Motor Impact Breaker 7.1</td>
+              <td>น้อยกว่า 190A</td>
+              <td>
+                <label for="status12fmcsh02">กระแสที่วัดได้(A):</label>
+                <input type="number" name="status12fmcsh02" id="status12fmcsh02" min=0 max=999 />
+              </td>
+            </tr>
+            <tr>
+              <td>13.Vibration Screen 8.1</td>
+              <td>V-Belt,Alignment</td>
+              <td>
+                <input type="radio" id="normal" name="status13fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status13fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status13fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status13fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>14.Motor Vibration Screen 8.1</td>
+              <td>น้อยกว่า 12A</td>
+              <td>
+                <label for="status14fmcsh02">กระแสที่วัดได้(A):</label>
+                <input type="number" name="status14fmcsh02" id="status14fmcsh02" min=0 max=999 />
+              </td>
+            </tr>
+            <tr>
+              <td>15.Screw Conveyor (ใต้Vibration Screen) 8.1</td>
+              <td>Bearing,เฟือง,โซ่,Alignment</td>
+              <td>
+                <input type="radio" id="normal" name="status15fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status15fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status15fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status15fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>16.Bucket Elevator(B9.1 Reject)</td>
+              <td>Bearing,เฟือง,โซ่,Alignment</td>
+              <td>
+                <input type="radio" id="normal" name="status16fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status16fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status16fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status16fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td>17.Back Stop Bucket(B9.1 Reject)</td>
+              <td>-</td>
+              <td>
+                <input type="radio" id="normal" name="status17fmcsh02" value="normal">
+                <label for="normal">ปกติ</label>
+                <input type="radio" id="abnormal" name="status17fmcsh02" value="abnormal">
+                <label for="abnormal">ผิดปกติ</label>
+                <input type="radio" id="fixed" name="status17fmcsh02" value="fixed">
+                <label for="fixed">ผิดปกติแก้ไขแล้ว</label>
+                <input type="radio" id="stop" name="status17fmcsh02" value="stop">
+                <label for="stop">ไม่เดินเครื่อง</label>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="submit"></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  </body>
+</html>

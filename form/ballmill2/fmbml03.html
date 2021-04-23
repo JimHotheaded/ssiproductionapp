@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>FMBML03</title>
+</head>
+
+<body>
+  <div class="container-fluid border">
+  <h1>Ball Mill #2 DATA SHEET</h1>
+  <div class="container-fluid">
+    <p>Date/Time: <span id="datetime"></span></p>
+    <script>
+      var dt = new Date();
+      document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+    </script>
+  </div>
+  <form class="form-group" action="/fmbml03" method="post">
+    <div class="container-fluid border border-primary">
+      <h3>Table Bearing Temp Before(*c) <\60</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p><input type="number" name="tableBearingTempBefore" min="0" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>Table Bearing Temp After(*c) <\60</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p><input type="number" name="tableBearingTempAfter" min="0" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>Gear Oil Temp Tube(*c) <\60</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p><input type="number" name="gearOilTemp" min="0" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>Water Temp Tube In(*c) <\60</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p><input type="number" name="waterTempTubeIn" min="0" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>Water Temp Tube Out(*c) <\60</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p><input type="number" name="waterTempTubeOut" min="0" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>Lub Oil Pressure(Mpa) <\0.2</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p><input type="number" name="lubOilPressure" min="0" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>Additive(Hz)</h3>
+      <h4>เช็คทุกชั่วโมง</h4>
+      <p><input type="number" name="additive" min="0" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>D.E.G Level</h3>
+      <h4>เช็คทุก 8 ชั่วโมง 8.00/16.00/24.00</h4>
+      <p><input type="number" name="degLevel" min="0" step="0.01"></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>ทำความสะอาดแม่เหล็ก(กรัม)</h3>
+      <h4>เช็คทุก 8 ชั่วโมง 8.00/16.00/24.00</h4>
+      <p>
+        <input type="radio" name="magnetCheck" id="pass" value="true">
+        <label for="pass">ทำความสะอาดแล้ว</label>
+        <input type="radio" name="magnetCheck" id="notPass" value="false">
+        <label for="notPass">ไม่ทำความสะอาด</label>
+      </p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>ตรวจเช็คฝุ่นตรวจเช็คฝุ่นรั่วจากเครื่องจักรหลัก</h3>
+      <h4>เช็คทุก 8 ชั่วโมง 8.00/16.00/24.00</h4>
+      <p>
+        <input type="radio" name="dustMCheck" id="pass" value="true">
+        <label for="pass">ไม่รั่ว</label>
+        <input type="radio" name="dustMCheck" id="notPass" value="false">
+        <label for="notPass">รั่ว</label></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>ตรวจเช็คฝุ่นรั่วจากระบบลำเลียง</h3>
+      <h4>เช็คทุก 8 ชั่วโมง 8.00/16.00/24.00</h4>
+      <p>
+        <input type="radio" name="dustCCheck" id="pass" value="true">
+        <label for="pass">ไม่รั่ว</label>
+        <input type="radio" name="dustCCheck" id="notPass" value="false">
+        <label for="notPass">รั่ว</label></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>ตรวจเช็คฝุ่นจากระบบ Bag Filter</h3>
+      <h4>เช็คทุก 8 ชั่วโมง 8.00/16.00/24.00</h4>
+      <p>
+        <input type="radio" name="dustBCheck" id="pass" value="true">
+        <label for="dustBCheck">ไม่รั่ว</label>
+        <input type="radio" name="dustBCheck" id="notPass" value="false">
+        <label for="dustBCheck">รั่ว</label></p>
+    </div><br>
+    <div class="container-fluid border border-primary">
+      <h3>Silo Level</h3>
+      <div class="container-fluid">
+        <h4>Silo3Level</h4>
+        <p><input type="number" name="silo3Level" min=0 step=0.01></p>
+      </div>
+      <div class="container-fluid">
+        <h4>Silo4Level</h4>
+        <p><input type="number" name="silo4Level" min="0" step="0.01"></p>
+      </div>
+      <div class="container-fluid">
+        <h4>Silo34Level</h4>
+        <p><input type="number" name="silo34Level" min="0" step="0.01"></p>
+      </div>
+      <div class="container-fluid">
+        <h4>Silo35Level</h4>
+        <p><input type="number" name="silo35Level" min="0" step="0.01"></p>
+      </div>
+      <div class="container-fluid ">
+        <h4>Silo36Level</h4>
+        <p><input type="number" name="silo36Level" min="0" step="0.01"></p>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+    <h1>==========</h1>
+    </div>
+    <div class="container-fluid d-flex justify-content-center">
+      <input type="submit" value="submit">
+    </div>
+  </form>
+  <hr size="30">
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

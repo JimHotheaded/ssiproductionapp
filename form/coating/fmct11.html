@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FM-CT-11</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <h3>FM-CT-11</h3>
+    <p>Date/Time: <span id="datetime"></span></p>
+    <script>
+      var dt = new Date();
+      document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+    </script>
+    <hr size="2">
+    <form class="form-group" action="/fmct11" method="post">
+      <table class="table">
+        <th style="text-align:left">Coating Plant 3# Data Sheet</th>
+        <tbody>
+          <tr>
+            <td>Watt Hour Meter</td>
+            <!-- <td>เช็คทุก 8 ชม./8.00/16.00/24.00</td> -->
+            <td><input type="number" name="fm11ct7wattHourMeter" step=0.01></td>
+          </tr>
+          <!-- <tr>
+            <td>1.Weight of melting(kg)(110-165kg.)</td>
+            <td><input type="number" name="fm11ct7weightOfMelting" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>2.Coating grade(0.7-1.2%)</td>
+            <td><input type="number" name="fm11ct7coatingGrade" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>3.Temperature at bin bottom(80-130*C)</td>
+            <td><input type="number" name="fm11ct7temperatureAtBinBottom" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>4.Speed stearine pump(100-300 1/min)</td>
+            <td><input type="number" name="fm11ct7speedStearinePump" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>5.Current main system fan(30-60A)</td>
+            <td><input type="number" name="fm11ct7currentMainSystemFan" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>6.Thrughput dosing screw(+-500kg/h)</td>
+            <td><input type="number" name="fm11ct7thrughputDosingScrew" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>7.Temperature circuit air(80-130*C)</td>
+            <td><input type="number" name="fm11ct7temperatureCircuitAir" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>8.Thrughput stearing(20-60kg/h)</td>
+            <td><input type="number" name="fm11ct7thrughputStearine" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>9.Current Mill housing side(40-130A)</td>
+            <td><input type="number" name="fm11ct7currentMillHousingSide" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>10.Current Mill Door Side(40-130A)</td>
+            <td><input type="number" name="fm11ct7currentMillDoorSide" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>11.Delte Pressure at filter(Max 19 mbar)</td>
+            <td><input type="number" name="fm11ct7deltePressureAtFilter" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>12.Temperature melting bin(80-130*C)</td>
+            <td><input type="number" name="fm11ct7temperatureMeltingBin" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>13.Temperature hose to pump(80-110*C)</td>
+            <td><input type="number" name="fm11ct7temperatureHoseToPump" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>14.Temperature pump(80-110*C)</td>
+            <td><input type="number" name="fm11ct7temperaturePump" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>15.Temperature hose to flow meter(80-110*C)</td>
+            <td><input type="number" name="fm11ct7temperatureHoseToFlowMeter" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>16.Temperature flow meter(80-110*C)</td>
+            <td><input type="number" name="fm11ct7temperatureFlowMeter" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>17.Temperature hose to nozzle(80-110*C)</td>
+            <td><input type="number" name="fm11ct7temperatureHoseToNozzle" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>18.Temperature Nozzle(80-110*C)</td>
+            <td><input type="number" name="fm11ct7temperatureNozzle" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>19.Heater for spray air(70-130*C)</td>
+            <td><input type="number" name="fm11ct7heaterForSprayAir" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>20.Average Voltage(VAC)</td>
+            <td><input type="number" name="fm11ct7averageVoltage" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>21.Avarage Current(A)</td>
+            <td><input type="number" name="fm11ct7averageCurrent" step=0.01 min=0 max=9999></td>
+          </tr>
+          <tr>
+            <td>22.Total Active Power(kW)</td>
+            <td><input type="number" name="fm11ct7totalActivePower" step=0.01 min=0 max=9999></td>
+          </tr> -->
+          <tr>
+            <td>23.ตรวจเช็คทำความสะอาดแม่เหล็ก (กรัม)</td>
+            <!-- <td>เช็คทุก 4 ชม./8.00/12.00/16.00/20.00/24.00/4.00</td> -->
+            <td><input type="number" name="fm11ct7magnetCleanCheck" min=0 step="0.01"></td>
+          </tr>
+          <tr>
+            <td>24.ตรวจเช็คฝุ่นตรวจเช็คฝุ่นรั่วจากเครื่องจักรหลัก</td>
+            <!-- <td>เช็คทุก 8 ชม./8.00/16.00/24.00</td> -->
+            <td><input type="checkbox" name="fm11ct7dustMachineCheck" id=""></td>
+          </tr>
+          <tr>
+            <td>25.ตรวจเช็คฝุ่นรั่วจากระบบลำเลียง</td>
+            <!-- <td>เช็คทุก 8 ชม./8.00/16.00/24.00</td> -->
+            <td><input type="checkbox" name="fm11ct7dustConveyorCheck" id=""></td>
+          </tr>
+          <tr>
+            <td>26.ตรวจเช็คฝุ่นจากระบบ Bag Filter</td>
+            <!-- <td>เช็คทุก 8 ชม./8.00/16.00/24.00</td> -->
+            <td><input type="checkbox" name="fm11ct7dustBagfilterCheck" id=""></td>
+          </tr>
+          <tr>
+            <td>27.Level Check Silo.31</td>
+            <!-- <td>เช็คทุก 8 ชม./15.00/23.00/7.00</td> -->
+            <td><input type="number" name="fm11ct7levelCheckSilo31" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>28.Level Check Silo.32</td>
+            <!-- <td>เช็คทุก 8 ชม./15.00/23.00/7.00</td> -->
+            <td><input type="number" name="fm11ct7levelCheckSilo32" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>29.Level Check Silo.33</td>
+            <!-- <td>เช็คทุก 8 ชม./15.00/23.00/7.00</td> -->
+            <td><input type="number" name="fm11ct7levelCheckSilo33" step=0.01 min=0></td>
+          </tr>
+          <tr>
+            <td>30.เขย่าน้ำแป้ง HiCoat</td>
+            <td>
+              <input type="checkbox" name="fm11ct7shakeHiCoatPass">
+              <label for="fm11ct7shakeHiCoatPass">ผ่าน</label>
+              <input type="checkbox" name="fm11ct7shakeHiCoatNotPass">
+              <label for="fm11ct7shakeHiCoatNotPass">ไม่ผ่าน</label>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="submit" name="" id=""></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

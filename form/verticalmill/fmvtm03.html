@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>FM-VTM-03</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <h3>FM-VTM-03</h3>
+  <p>Date/Time: <span id="datetime"></span></p>
+  <script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+  </script>
+  <hr size="2">
+  <form class="form-group" action="/fmvtm03" method="post" autocomplete="off">
+    <table class="table">
+      <th style="text-align:left">Vertical Mill Datasheet</th>
+      <tbody>
+        <tr>
+          <td>1.Roller Level (No.1)</td>
+          <td><input type="number" name="rollerLevelNo1" min=0></td>
+        </tr>
+        <tr>
+          <td>2.Roller Level (No.2)</td>
+          <td><input type="number" name="rollerLevelNo2" min=0></td>
+        </tr>
+        <tr>
+          <td>3.Roller Level (No.3)</td>
+          <td><input type="number" name="rollerLevelNo3" min=0></td>
+        </tr>
+        <tr>
+          <td>4.Vibration</td>
+          <td><input type="number" name="vibration" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>5.Mill Motor(kW)</td>
+          <td><input type="number" name="millMotorkW" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>6.Mill Motor(Amp)</td>
+          <td><input type="number" name="millMotorAmp" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>7.Mill Fan(rpm)</td>
+          <td><input type="number" name="millFanRpm" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>8.Mill Fan(Amp)</td>
+          <td><input type="number" name="millFanAmp" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>9.Separator(rpm)</td>
+          <td><input type="number" name="separatorRpm" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>10.Separator(Amp)</td>
+          <td><input type="number" name="separatorAmp" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>11.Feed Raw Material(tons)</td>
+          <td><input type="number" name="feedRawMaterialTons" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>12.Feed Raw Material(Hz)</td>
+          <td><input type="number" name="feedRawMaterialHz" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>13.Lub Oil Prussure(P)(kgf/cm2)</td>
+          <td><input type="number" name="lubOilPressureP" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>14.Lub Oil Pressure(F)(kgf/cm2)</td>
+          <td><input type="number" name="lubOilPressureF" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>15.Lub Oil Alarm Temp(*C)</td>
+          <td><input type="number" name="lubOilAlarmTemp" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>16.Alarm Thrust Bearing Temp(*C)</td>
+          <td><input type="number" name="alarmThrustBearingTemp" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>17.Alarm High Speed Temp(*C)</td>
+          <td><input type="number" name="alarmHighSpeedTemp" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>18.Pump Pressure(kgf/cm2)</td>
+          <td><input type="number" name="pumpPressure" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>19.Roller Pressure(kgf/cm2)</td>
+          <td><input type="number" name="rollerPressure" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>20.Hydraulic Oil Temp(*C)</td>
+          <td><input type="number" name="hydraulicOilTemp" id="" min=0></td>
+        </tr>
+        <tr>
+          <td>21.ทำความสะอาดแม่เหล็ก นำ้หนัก(กรัม)</td>
+          <td><input type="number" name="magnetClean" min="0" step="0.01"></td>
+        </tr>
+        <tr>
+          <td>22.ตรวจเช็คฝุ่นรั่วจากเครื่องจักรหลัก</td>
+          <td>
+            <input type="radio" name="dustMCheck" id="pass" value="true">
+            <label for="pass">ผ่าน</label>
+            <input type="radio" name="dustMCheck" id="notPass" value="false">
+            <label for="notPass">ไม่ผ่าน</label>
+          </td>
+        </tr>
+        <tr>
+          <td>23.ตรวจเช็คฝุ่นรั่วจากระบบลำเลียง</td>
+          <td>
+            <input type="radio" name="dustCCheck" id="pass" value="true">
+            <label for="pass">ผ่าน</label>
+            <input type="radio" name="dustCCheck" id="notPass" value="false">
+            <label for="notPass">ไม่ผ่าน</label>
+          </td>
+        </tr>
+        <tr>
+          <td>24.ตรวจเช็คฝุ่นรั่วจากระบบ Bag filter</td>
+          <td>
+            <input type="radio" name="dustBCheck" id="pass" value="true">
+            <label for="pass">ผ่าน</label>
+            <input type="radio" name="dustBCheck" id="notPass" value="false">
+            <label for="notPass">ไม่ผ่าน</label>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="submit" name="" id=""></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </form>
+
+
+</body>
+
+</html>
